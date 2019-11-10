@@ -1,5 +1,11 @@
 # todo
 
+### Check it out at:
+```
+http://todo.vorontsov.biz
+```
+![Screenshot](screenshot.png)
+
 ## Project setup
 ```
 npm install

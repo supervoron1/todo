@@ -28,8 +28,7 @@
             </div>
             <ul>
                 <todo-item v-for="(todo, index) in todos" :key="todo.id" :todo="todo" :index="index"
-                           :checkAll="!anyRemaining" @removedTodo="removeTodo"
-                           @finishedEdit="finishedEdit">
+                           :checkAll="!anyRemaining">
                 </todo-item>
             </ul>
         </div>
@@ -37,6 +36,7 @@
 </template>
 
 <script>
+  import {eventBus} from "../main";
   import TodoItem from "./TodoItem";
 
   export default {
@@ -84,6 +84,11 @@
     //     this.todos = JSON.parse(localStorage.todos);
     //   }
     // },
+    created() {
+      eventBus.$on('removedTodo', (index) => this.removeTodo(index));
+      eventBus.$on('finishedEdit', (data) => this.finishedEdit(data));
+    },
+
     computed: {
       remaining() {
         return this.todos.filter(todo => !todo.done).length

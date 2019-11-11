@@ -71,14 +71,14 @@
           }],
       }
     },
-    watch: {
-      todos: {
-        handler() {
-          localStorage.todos = JSON.stringify(this.todos);
-        },
-        deep: true
-      }
-    },
+    // watch: {
+    //   todos: {
+    //     handler() {
+    //       localStorage.todos = JSON.stringify(this.todos);
+    //     },
+    //     deep: true
+    //   }
+    // },
     // mounted() {
     //   if (localStorage.todos) {
     //     this.todos = JSON.parse(localStorage.todos);
@@ -87,6 +87,10 @@
     created() {
       eventBus.$on('removedTodo', (index) => this.removeTodo(index));
       eventBus.$on('finishedEdit', (data) => this.finishedEdit(data));
+    },
+    beforeDestroy(){
+      eventBus.off('removedTodo');
+      eventBus.off('finishedEdit');
     },
 
     computed: {

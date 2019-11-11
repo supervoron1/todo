@@ -1,8 +1,8 @@
 # todo
 
 ### Check it out at:
-```
-See [http://todo.vorontsov.biz/](http://todo.vorontsov.biz)
+
+[http://todo.vorontsov.biz/](http://todo.vorontsov.biz)
 ```
 ![Screenshot](screenshot.png)
 

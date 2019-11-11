@@ -2,7 +2,7 @@
 
 ### Check it out at:
 ```
-http://todo.vorontsov.biz
+See [Configuration Reference](http://todo.vorontsov.biz)
 ```
 ![Screenshot](screenshot.png)
 
